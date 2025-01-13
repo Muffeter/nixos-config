@@ -18,14 +18,8 @@
   networking.hostName = "hiMing"; # Define your hostname.
 
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.defaultGateway = "192.168.1.2";
 
-  networking.interfaces."ens33".ipv4.routes = [
-  {
-    address = "192.168.1.0";
-    prefixLength = 24;
-    via = "192.168.1.2";
-  }
-  ];
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
