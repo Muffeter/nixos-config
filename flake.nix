@@ -151,13 +151,13 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./host/vm
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.ming = import ./home.nix;
-	  home-manager.backupFileExtension = "backup";
+          home-manager.users.ming = import ./users/ming/home.nix;
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };
