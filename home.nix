@@ -2,6 +2,7 @@
 
 
 {
+  imports = [ ./nvim.nix ];
   home.username = "ming";
   home.homeDirectory = "/home/ming";
   xresources.properties = {
@@ -17,7 +18,12 @@
     ltrace # library call monitoring
     lsof # list open files
     lemonade
+    fish
   ];
+
+  programs.fish = {
+    enable = true;
+  };
 
   # git 
   programs.git = {
@@ -48,8 +54,6 @@
     port = 3333
     host = '192.168.1.1'
   '';
-  imports = [ ./nvim.nix ];
-
   #xdg.configFile."nvim".source = $HOME/nvim;
   home.stateVersion = "25.05";
 

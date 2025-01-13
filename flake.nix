@@ -157,6 +157,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.ming = import ./home.nix;
+	  home-manager.backupFileExtension = "backup";
         }
       ];
     };
