@@ -44,15 +44,17 @@
     fish
   ];
 
-  users.defaultUserShell = pkgs.fish;
   users.users.ming = {
     isNormalUser = true;
     description = "ming";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
 
-  programs.fish = {
-    enable = true;
+  programs.fish = {enable = true;};
+
+  environment.shellAliases = {
+    sw = "sudo nixos-rebuild switch";
   };
 
    # Enable the OpenSSH daemon.
