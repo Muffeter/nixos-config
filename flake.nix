@@ -102,7 +102,7 @@
 
 
 
-  outputs = { self, c-hello, nixpkgs, nix-bundle, home-manager, ... } @inputs : {
+  outputs = { self, c-hello, nixpkgs, nix-bundle, home-manager, ... } @inputs: {
 
     # Utilized by `nix flake check`
     checks.x86_64-linux.test = c-hello.checks.x86_64-linux.test;
@@ -138,7 +138,7 @@
     overlays = { exampleOverlay = self.overlay; };
 
     # Default module, for use in dependent flakes. Deprecated, use nixosModules.default instead.
-    nixosModule = { config, ... }: { options = {}; config = {}; };
+    nixosModule = { config, ... }: { options = { }; config = { }; };
 
     # Same idea as nixosModule but a list or attrset of them.
     nixosModules = { exampleModule = self.nixosModule; };
@@ -149,15 +149,15 @@
 
     nixosConfigurations.hiMing = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
-	./configuration.nix
-	home-manager.nixosModules.home-manager
-	{
-	 home-manager.useGlobalPkgs = true;
-	 home-manager.useUserPackages = true;
-	 home-manager.users.ming = import ./home.nix;
-	}
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ming = import ./home.nix;
+        }
       ];
     };
 

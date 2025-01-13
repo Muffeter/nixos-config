@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -17,7 +18,7 @@
   networking.hostName = "hiMing"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -36,7 +37,7 @@
 
   # Enable the X11 windowing system.
 
-  
+
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -58,22 +59,22 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     neovim
-     curl
-     git
-     gcc
-   ];
+    neovim
+    curl
+    git
+    gcc
+  ];
 
   users.users.ming = {
-   isNormalUser = true;
-   description = "ming";
-   extraGroups = [ "networkmanager" "wheel"];
-};
+    isNormalUser = true;
+    description = "ming";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

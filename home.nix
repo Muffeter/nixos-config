@@ -38,17 +38,17 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-        nvim-lspconfig
-        lazy-nvim
-        nvim-treesitter.withAllGrammars
+      nvim-lspconfig
+      lazy-nvim
+      nvim-treesitter.withAllGrammars
     ];
   };
 
   home.file."lemonade.toml".text = ''
-port = 3333
-host = '192.168.1.1'
+    port = 3333
+    host = '192.168.1.1'
   '';
- imports = [ ./nvim.nix ];
+  imports = [ ./nvim.nix ];
 
   #xdg.configFile."nvim".source = $HOME/nvim;
   home.stateVersion = "25.05";
