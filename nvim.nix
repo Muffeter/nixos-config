@@ -6,8 +6,8 @@ let
 
     src = pkgs.fetchgit {
       url = "https://github.com/Muffeter/nvim.git";
-      rev = "9f6e4895e0cfab6f31f024ae06f181b1050d36c5";
-      sha256 = "whbvtG4k3OvcncV6ANBv30mAwf+wb3NY1pZLvP0Ocgk=";
+      rev = "96c2b27fcc2399f17f01a0493b5ae64dc2fbb25b";
+      sha256 = "sha256-ZElYG0ro+MclyWRLFJ/J9HCLbeCKAMP1P96W5YYIGB0=";
     };
 
     installPhase = ''

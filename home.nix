@@ -19,10 +19,14 @@
     lsof # list open files
     lemonade
     fish
+    nixd
   ];
 
   programs.fish = {
     enable = true;
+    shellAliases = {
+      sw = "sudo nixos-rebuild switch";
+    };
   };
 
   # git 
