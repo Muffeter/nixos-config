@@ -161,6 +161,20 @@
         }
       ];
     };
+    nixosConfigurations.rack = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./host/rack
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ming = import ./users/ming/home.nix;
+          home-manager.backupFileExtension = "backup";
+        }
+      ];
+    };
 
     # Utilized by `nix develop .#<name>`
     devShells.x86_64-linux.example = self.devShell.x86_64-linux;

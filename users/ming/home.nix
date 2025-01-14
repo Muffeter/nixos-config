@@ -5,7 +5,7 @@
     ../../home/misc
   ];
   home.username = "ming";
-  home.homeDirectory = "/home/ming";
+  home.homeDirectory = lib.mkForce "/home/ming";
   xresources.properties = {
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
