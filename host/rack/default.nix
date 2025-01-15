@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../docker/vaultwarden
+    ../../docker/reader
   ];
 
   boot.tmp.cleanOnBoot = true;
