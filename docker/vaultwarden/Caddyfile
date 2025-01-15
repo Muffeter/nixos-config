@@ -1,0 +1,6 @@
+{
+	email sonmu.def@gmail.com
+}
+bitwarden.son5mu.win {
+	reverse_proxy vaultwarden:8192
+}
