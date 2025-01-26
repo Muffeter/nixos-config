@@ -4,3 +4,6 @@
 bitwarden.son5mu.win {
 	reverse_proxy vaultwarden:8192
 }
+read.son5mu.win {
+	reverse_proxy reader:8080
+}

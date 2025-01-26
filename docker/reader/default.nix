@@ -30,22 +30,18 @@
     log-driver = "journald";
     extraOptions = [
       "--network-alias=reader"
-      "--network=reader_share_net"
+      "--network=vaultwarden_net"
     ];
   };
   systemd.services."docker-reader" = {
     serviceConfig = {
       Restart = lib.mkOverride 90 "always";
       RestartMaxDelaySec = lib.mkOverride 90 "1m";
-      RestartSec = lib.mkOverride 90 "100ms";
+      RestartSec = lib.mkOverride 90 "1000ms";
       RestartSteps = lib.mkOverride 90 9;
     };
-    after = [
-      "docker-network-reader_share_net.service"
-    ];
-    requires = [
-      "docker-network-reader_share_net.service"
-    ];
+    after = [       "docker-network-vaultwarden_net.service"     ];
+    requires = [       "docker-network-vaultwarden_net.service"     ];
     partOf = [
       "docker-compose-reader-root.target"
     ];
