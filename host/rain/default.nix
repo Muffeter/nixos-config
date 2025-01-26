@@ -1,8 +1,7 @@
 {pkgs,... }: {
   imports = [
     ./hardware-configuration.nix
-    
-    
+    ../../docker/teamspeak
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -14,6 +13,9 @@
   users.users.root.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKj+SEeluP2J2Pd3flpELTXsj5axIxzmmMBTIZZaAH9 ming@DESKTOP-2FN6259
 "];
   virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    registry-mirrors= ["https://docker.son5mu.win"];
+};
 
 
 nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
