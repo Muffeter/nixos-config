@@ -1,0 +1,11 @@
+name: momwechat
+services:
+    mom:
+        ports:
+            - 4928:80
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        restart: always
+        build: 
+          context: .
+        command: [nginx, '-g', 'daemon off;']
