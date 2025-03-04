@@ -1,0 +1,2 @@
+sw:
+    nixos-rebuild switch
