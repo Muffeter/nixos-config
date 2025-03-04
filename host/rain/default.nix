@@ -29,6 +29,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     vim
     wget
     just
+    nh
   ];
   users.users.ming = {
     isNormalUser = true;
