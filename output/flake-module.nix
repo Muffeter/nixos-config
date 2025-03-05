@@ -21,6 +21,7 @@
 in 
 {
   rainyun = mkNixOS "x86_64-linux" ../host/rain;
+  rack = mkNixOS "x86_64-linux" ../host/rack;
 
 
 }
