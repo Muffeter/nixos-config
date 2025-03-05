@@ -22,7 +22,7 @@
 };
 
 
-nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+#nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     git
