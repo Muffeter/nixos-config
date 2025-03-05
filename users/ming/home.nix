@@ -14,13 +14,12 @@
     neofetch
     which
     nix-output-monitor
-
-    strace # system call monitoring
-    ltrace # library call monitoring
     lsof # list open files
     lemonade
     fish
     nixd
+    tmux
+
   ];
 
   programs.fish = {

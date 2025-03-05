@@ -29,7 +29,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     neovim
     wget
     just
-    nh
     fish
   ];
   users.users.ming = {
