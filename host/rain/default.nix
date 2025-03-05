@@ -30,6 +30,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     wget
     just
     nh
+    clashtui
   ];
   users.users.ming = {
     isNormalUser = true;
