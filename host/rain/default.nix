@@ -30,7 +30,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     wget
     just
     nh
-    clashtui
+    fish
   ];
   users.users.ming = {
     isNormalUser = true;
@@ -38,12 +38,10 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
   };
+  users.users.root = {
+	shell = pkgs.fish;
+};
 
   programs.fish = {enable = true;};
-
-  environment.shellAliases = {
-    sw = "sudo nixos-rebuild switch";
-  };
-
   system.stateVersion = "23.11";
 }
