@@ -2,15 +2,14 @@
 set -euo pipefail
 
 # 警告提示
-echo "警告：本脚本将永久擦除 /dev/sda 上的所有数据！"
-read -p "确认要继续吗？(输入大写YES确认) " confirm
-if [[ "$confirm" != "YES" ]]; then
-    echo "操作已取消"
+read -p "sure to continue? y/n" confirm
+if [[ "$confirm" != "y" ]]; then
+    echo "cancel"
     exit 1
 fi
 
 # 分区操作
-parted --script /dev/sda \
+parted --script /dev/sda -- \
     mklabel gpt \
     mkpart ESP fat32 1MiB 256MiB \
     set 1 esp on \
@@ -19,7 +18,7 @@ parted --script /dev/sda \
 
 # 格式化文件系统
 mkfs.fat -F 32 /dev/sda1
-mkfs.btrfs -L nixos /dev/sda2
+mkfs.btrfs -L nixos /dev/sda2 -f
 mkswap -L swap /dev/sda3
 
 # 临时挂载创建子卷
