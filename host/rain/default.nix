@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../../docker/teamspeak
     ../../docker/momWechat
+    ../../docker/langbot
   ];
 
   boot.tmp.cleanOnBoot = true;
