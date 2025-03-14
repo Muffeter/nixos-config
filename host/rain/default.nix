@@ -4,6 +4,7 @@
     ../../docker/teamspeak
     ../../docker/momWechat
     ../../docker/langbot
+    ../../docker/filebox
   ];
 
   boot.tmp.cleanOnBoot = true;
