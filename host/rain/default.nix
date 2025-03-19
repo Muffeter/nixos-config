@@ -5,6 +5,7 @@
     ../../docker/momWechat
     ../../docker/langbot
     ../../docker/filebox
+    ../../docker/aria2pro
   ];
 
   boot.tmp.cleanOnBoot = true;
