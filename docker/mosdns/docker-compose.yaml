@@ -1,0 +1,10 @@
+name: mosdns
+services:
+    mosdns:
+        container_name: mosdns
+        ports:
+            - 5454:53/udp
+            - 5454:53/tcp
+        volumes:
+            - /etc/mosdns:/etc/mosdns
+        image: docker.son5mu.win/irinesistiana/mosdns:latest
