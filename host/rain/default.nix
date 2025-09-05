@@ -14,7 +14,17 @@
   networking.hostName = "rainyun";
   networking.domain = "rainyun";
   services.openssh.enable = true;
+  networking.defaultGateway = {
+	 address = "172.16.0.1";
+	interface = "ens18";
+  };
   networking.firewall.enable = false;
+  networking.interfaces."ens18".ipv4.addresses = [
+	{
+		address = "172.16.103.125";
+		prefixLength = 16;
+	}
+  ];
   users.users.root.openssh.authorizedKeys.keys = [
 "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKj+SEeluP2J2Pd3flpELTXsj5axIxzmmMBTIZZaAH9 ming@DESKTOP-2FN6259"
 "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGV1sRtpYjmXN3PpIrpqvmJDgvJ6j3TwvAim9aMI5dPz ming@rack"
