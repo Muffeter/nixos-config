@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../docker/teamspeak
-    ../../docker/mosdns
+    #../../docker/mosdns
     # ../../docker/momWechat
     # ../../docker/langbot
     # ../../docker/filebox
@@ -11,6 +11,7 @@
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
+
   networking.hostName = "rainyun";
   networking.domain = "rainyun";
   services.openssh.enable = true;
@@ -25,10 +26,9 @@
 		prefixLength = 16;
 	}
   ];
+  networking.resolvconf.extraConfig = "name_servers=8.8.8.8";
   users.users.root.openssh.authorizedKeys.keys = [
-"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKj+SEeluP2J2Pd3flpELTXsj5axIxzmmMBTIZZaAH9 ming@DESKTOP-2FN6259"
-"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGV1sRtpYjmXN3PpIrpqvmJDgvJ6j3TwvAim9aMI5dPz ming@rack"
-
+  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMF04F9sFbU8NfwQCCEgkiJ8D6lADiqWlkGwBDOSn/i gm@pi"
 ];
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = {
