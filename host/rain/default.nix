@@ -29,7 +29,7 @@
   networking.resolvconf.extraConfig = "name_servers=8.8.8.8";
   users.users.root.openssh.authorizedKeys.keys = [
   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMF04F9sFbU8NfwQCCEgkiJ8D6lADiqWlkGwBDOSn/i gm@pi"
-];
+  ];
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = {
     registry-mirrors= ["https://docker.son5mu.win"];
@@ -68,6 +68,9 @@ nix.settings.substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store"
     description = "ming";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = [
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMF04F9sFbU8NfwQCCEgkiJ8D6lADiqWlkGwBDOSn/i gm@pi"
+    ];
   };
   users.users.root = {
 	shell = pkgs.fish;
