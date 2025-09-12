@@ -13,7 +13,7 @@
   home.packages = with pkgs;[
     neofetch
     which
-    nix-output-monitor
+    nh
     lsof # list open files
     lemonade
     fish
