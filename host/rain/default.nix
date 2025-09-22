@@ -1,7 +1,8 @@
 {pkgs,... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../docker/teamspeak
+    ./dockerEnv.nix
+   ../../docker/teamspeak
     #../../docker/mosdns
     # ../../docker/momWechat
     # ../../docker/langbot
