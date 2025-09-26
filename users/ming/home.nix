@@ -19,6 +19,7 @@
     fish
     nixd
     tmux
+    proxychains-ng
 
   ];
 
@@ -35,6 +36,7 @@
     userName = "Muffeter";
     userEmail = "sonmu.def@gmail.com";
   };
+
 
 
   # programs.bash = {
